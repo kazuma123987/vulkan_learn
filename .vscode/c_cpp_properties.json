@@ -3,9 +3,12 @@
         {
             "name": "Win32",
             "includePath": [
-                "include",
-                "include\\easyx",
-                "src\\vk_sdks\\include"
+                "src\\easyvk",
+                "lib\\easyx\\include",
+                "src\\middlewares\\glad",
+                "src\\middlewares\\glfw\\include",
+                "src\\middlewares\\stb_image",
+                "src\\middlewares\\vk_sdks\\Include"
             ],
             "windowsSdkVersion": "10.0.19041.0",
             "cStandard": "c99",
