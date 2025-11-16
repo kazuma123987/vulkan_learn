@@ -787,8 +787,10 @@ namespace vulkan
 					return result;
 			// If surface format is not determined, select a a four-component UNORM format
 			if (!swapchainCreateInfo.imageFormat)
-				if (SetSurfaceFormat({VK_FORMAT_R8G8B8A8_UNORM, VK_COLOR_SPACE_SRGB_NONLINEAR_KHR}) &&
-					SetSurfaceFormat({VK_FORMAT_B8G8R8A8_UNORM, VK_COLOR_SPACE_SRGB_NONLINEAR_KHR}))
+				// if (SetSurfaceFormat({VK_FORMAT_R8G8B8A8_UNORM, VK_COLOR_SPACE_SRGB_NONLINEAR_KHR}) &&
+				// 	SetSurfaceFormat({VK_FORMAT_B8G8R8A8_UNORM, VK_COLOR_SPACE_SRGB_NONLINEAR_KHR}))
+				if (SetSurfaceFormat({VK_FORMAT_A2B10G10R10_UNORM_PACK32, VK_COLOR_SPACE_HDR10_ST2084_EXT}) &&
+					SetSurfaceFormat({VK_FORMAT_A2B10G10R10_UNORM_PACK32, VK_COLOR_SPACE_HDR10_ST2084_EXT}))
 				{
 					swapchainCreateInfo.imageFormat = availableSurfaceFormats[0].format;
 					swapchainCreateInfo.imageColorSpace = availableSurfaceFormats[0].colorSpace;

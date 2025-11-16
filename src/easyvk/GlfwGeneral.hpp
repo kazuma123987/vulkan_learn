@@ -45,6 +45,7 @@ bool InitializeWindow(VkExtent2D size, bool fullScreen = false, bool isResizable
 		graphicsBase::Base().AddInstanceExtension(extensionNames[i]);
 #endif
 	graphicsBase::Base().AddDeviceExtension(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
+	graphicsBase::Base().AddInstanceExtension(VK_EXT_SWAPCHAIN_COLOR_SPACE_EXTENSION_NAME);
 
 	graphicsBase::Base().UseLatestApiVersion();
 	if (graphicsBase::Base().CreateInstance())

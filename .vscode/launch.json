@@ -8,7 +8,7 @@
             "name": "debug server",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/vksrc.exe",
+            "program": "${workspaceFolder}/bin/test_src.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

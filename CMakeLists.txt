@@ -17,19 +17,23 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/middlewares/glfw)
 
 # 源文件
 file(GLOB glad_src ${CMAKE_SOURCE_DIR}/src/middlewares/glad/glad.c)
-file(GLOB vksrc ${CMAKE_SOURCE_DIR}/src/*.c*)
+file(GLOB main_src ${CMAKE_SOURCE_DIR}/src/main.cpp)
+file(GLOB test_src ${CMAKE_SOURCE_DIR}/src/test.cpp)
 
 # 找到库
 find_package(Vulkan REQUIRED)
 
 # 可执行文件
-add_executable(vksrc ${vksrc})
+add_executable(main_src ${main_src})
+add_executable(test_src ${test_src})
 
 # 链接头文件
-target_include_directories(vksrc PUBLIC ${Vulkan_INCLUDE_DIRS})
+target_include_directories(main_src PUBLIC ${Vulkan_INCLUDE_DIRS})
+target_include_directories(test_src PUBLIC ${Vulkan_INCLUDE_DIRS})
 
 # # 链接库目录
-# target_link_directories(vksrc PRIVATE ${CMAKE_SOURCE_DIR}/lib/glfw)
+# target_link_directories(main_src PRIVATE ${CMAKE_SOURCE_DIR}/lib/glfw)
 
 # 链接库
-target_link_libraries(vksrc PRIVATE glfw Vulkan::Vulkan)
+target_link_libraries(main_src PRIVATE glfw Vulkan::Vulkan)
+target_link_libraries(test_src PRIVATE glfw Vulkan::Vulkan)
